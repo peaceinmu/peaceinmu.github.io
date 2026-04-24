@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的溫暖小宇宙</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", sans-serif;
+      background: #f5f1ea;
+      color: #4a4a4a;
+    }
+    header {
+      background: #d6c3a3;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      background: #ede4d3;
+    }
+    nav a {
+      text-decoration: none;
+      color: #6b5e4b;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #d6c3a3;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>我的溫暖小宇宙</header>
+
+<nav>
+  <a href="#about">關於我</a>
+  <a href="#portfolio">作品集</a>
+  <a href="#articles">文章</a>
+</nav>
+
+<section id="about">
+  <h2>關於我</h2>
+  <p>這是一個屬於我的空間，記錄創作、生活與靈感。
+  我喜歡山、海、月亮，以及那些安靜流動的時刻。</p>
+</section>
+
+<section id="portfolio">
+  <h2>作品集</h2>
+  <div class="gallery">
+    <img src="https://picsum.photos/300?1" onclick="openModal(this.src)">
+    <img src="https://picsum.photos/300?2" onclick="openModal(this.src)">
+    <img src="https://picsum.photos/300?3" onclick="openModal(this.src)">
+  </div>
+</section>
+
+<section id="articles">
+  <h2>文章</h2>
+  <p>這裡未來可以放你的創作文章、心得、生活紀錄。</p>
+</section>
+
+<div class="modal" id="modal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
+<footer>
+  © 2026 我的名字
+</footer>
+
+<script>
+  function openModal(src) {
+    document.getElementById('modal').style.display = 'flex';
+    document.getElementById('modalImg').src = src;
+  }
+
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
